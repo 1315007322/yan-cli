@@ -1,14 +1,19 @@
 {
     "compilerOptions": {
         "baseUrl": "./",
-        "jsx": "react-jsx"
+        "jsx": "react-jsx",
     },
     "include": [
-        "src/utils",
+        "utils",
         "type",
-        "src",
+        "src/**/*.tsx",
     ],
     "exclude": [
         "node_modules"
-    ]
+    ],
+    "path": {
+        "Src/*": ["src/**"],
+        "Utils/*": ["utils/**"],
+        "Assets/*": ["assets/**"],
+    }
 }

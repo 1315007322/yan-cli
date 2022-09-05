@@ -6,6 +6,14 @@ const webpack = require('webpack');
 const config = {
     mode: 'development',
     entry: "./src/main.tsx", // 入口文件
+    resolve: {
+        extensions: ['.tsx','.ts','json', '...'],
+        alias: {
+            Src: path.resolve(__dirname,'../src'),
+            Utils: path.resolve(__dirname,'../utils'),
+            Assets: path.resolve(__dirname,'../assets')
+        }
+    },
     module: {
         rules: [
             //处理js
@@ -55,7 +63,8 @@ const config = {
     devServer: {
         static: path.resolve(__dirname, "./dist"), // 静态文件目录
         port: 8080, // 端口号
-        hot: true
+        hot: true,
+        open: true
     },
 
     plugins: [
@@ -67,7 +76,7 @@ const config = {
         new webpack.ProvidePlugin({
             React: "react",
         })
-    ],
+    ]
 };
 
 module.exports = (env, argv) => {

@@ -1,4 +1,4 @@
-import Home from "src/views/home";
+import Home from 'Src/views/home';
 
 const myRoutes = [
     {

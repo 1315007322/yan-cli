@@ -1,23 +1,24 @@
-import './assets/common.css'
-import { render } from "react-dom";
-import { history, HistoryRouter } from './utils/route'
+import 'Assets/common.css'
+import { createRoot } from "react-dom/client";
+import { history, HistoryRouter } from 'Utils/route'
 import { Route, Routes } from 'react-router-dom';
+import myRoutes from 'Src/router/index';
 
-// const getRoute = () => {
-//     console.log(myRoutes);
-    
-//     const result:any = []
-//     myRoutes.map(item => {
-//         result.push(<Route path={item.path} element={item.ele}/>)
-//     })
-//     return result;
-// }
+const container = createRoot(document.getElementById('root'))
 
-render(
+const getRoute = () => {
+    const result:any = []
+    myRoutes.map(item => { 
+        result.push(<Route path={item.path} element={item.ele}/>)
+    })
+    return result;
+}
+
+container.render(
     <HistoryRouter history={history}>
         <Routes>
-            {/* {getRoute()} */}
+            {getRoute()}
         </Routes>
     </HistoryRouter>,
-    document.getElementById('root')
+    
 )
