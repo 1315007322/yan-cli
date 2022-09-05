@@ -4,7 +4,11 @@
         "jsx": "react-jsx"
     },
     "include": [
-        "./type/*.ts",
-        "./src"
+        "src/utils",
+        "type",
+        "src",
+    ],
+    "exclude": [
+        "node_modules"
     ]
 }

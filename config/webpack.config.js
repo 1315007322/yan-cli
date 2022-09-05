@@ -5,7 +5,7 @@ const webpack = require('webpack');
 
 const config = {
     mode: 'development',
-    entry: "./src/main.jsx", // 入口文件
+    entry: "./src/main.tsx", // 入口文件
     module: {
         rules: [
             //处理js
