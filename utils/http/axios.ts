@@ -11,8 +11,6 @@ const http = axios.create({
     }
 })
 
-
-
 // 添加请求拦截器
 http.interceptors.request.use(function (config) {
     const authority = localStorage.getItem("token")

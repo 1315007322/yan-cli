@@ -7,11 +7,11 @@ const config = {
     mode: 'development',
     entry: "./src/main.tsx", // 入口文件
     resolve: {
-        extensions: ['.tsx','.ts','json', '...'],
+        extensions: ['.tsx', '.ts', 'json', '...'],
         alias: {
-            Src: path.resolve(__dirname,'../src'),
-            Utils: path.resolve(__dirname,'../utils'),
-            Assets: path.resolve(__dirname,'../assets')
+            Src: path.resolve(__dirname, '../src'),
+            Utils: path.resolve(__dirname, '../utils'),
+            Assets: path.resolve(__dirname, '../assets')
         }
     },
     module: {
@@ -43,13 +43,16 @@ const config = {
             },
             // css
             {
-                test: /\.css$/,
+                test: /\.(css|less)$/,
                 use: [
                     {
                         loader: 'style-loader',
                     },
                     {
                         loader: 'css-loader'
+                    },
+                    {
+                        loader: 'less-loader'
                     }
                 ]
             }
